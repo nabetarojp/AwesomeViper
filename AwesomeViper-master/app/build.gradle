@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.gfx.ribbonizer'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.watanabe.awesomeviper"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    dexOptions {
+        dexInProcess = true
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // UI
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support:design:$supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$supportLibraryVersion"
+    compile "com.android.support:support-vector-drawable:$supportLibraryVersion"
+    compile "com.android.support:preference-v7:$supportLibraryVersion"
+
+    // Rx
+    compile "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    // Dagger
+    compile "com.google.dagger:dagger:$dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger2Version"
+    compile "com.google.dagger:dagger-android-support:$dagger2Version"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger2Version"
+
+    // Network
+    compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+    // Data
+    compile("com.github.gfx.android.orma:orma:$ormaVersion") {
+        exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+        exclude group: 'io.reactivex.rxjava2', module: 'rxandroid'
+    }
+
+    // Util
+    compile "com.google.code.gson:gson:$gsonVersion"
+
+
+    debugCompile "com.facebook.stetho:stetho:$stethoVerion"
+    debugCompile "com.facebook.stetho:stetho-okhttp3:$stethoVerion"
+
+
+    testCompile("com.squareup.okhttp3:mockwebserver:$okhttpVersion") {
+        exclude group: 'com.squareup.okio', 'module': 'okio'
+        exclude group: 'com.squareup.okhttp', 'module': 'okhttp'
+    }
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.0.0'
+    compile 'com.facebook.fresco:fresco:1.2.0'
+    compile 'com.jakewharton.timber:timber:4.5.1'
+    compile 'com.android.support:multidex:1.0.1'
+}
