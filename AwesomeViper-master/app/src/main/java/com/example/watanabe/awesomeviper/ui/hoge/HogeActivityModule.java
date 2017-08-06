@@ -10,7 +10,7 @@ import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {HogeActivityComponent.class})
-public abstract class HomeActivityModule {
+public abstract class HogeActivityModule {
 
     @Binds
     @IntoMap

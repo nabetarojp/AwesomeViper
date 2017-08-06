@@ -15,10 +15,6 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 
-/**
- * Created by watanabe on 2017/08/02.
- */
-
 public class HogeActivity extends AppCompatActivity implements HogeContract.View {
 
     public static Intent createIntent(Context context) {

@@ -1,7 +1,7 @@
 package com.example.watanabe.awesomeviper.di;
 
 import com.example.watanabe.awesomeviper.AwesomeApp;
-import com.example.watanabe.awesomeviper.ui.hoge.HomeActivityModule;
+import com.example.watanabe.awesomeviper.ui.hoge.HogeActivityModule;
 import com.google.gson.Gson;
 
 import javax.inject.Singleton;
@@ -17,7 +17,7 @@ import dagger.android.AndroidInjectionModule;
 @Component(modules = {
         AndroidInjectionModule.class,
         AppModule.class,
-        HomeActivityModule.class
+        HogeActivityModule.class
 })
 public interface AppComponent {
 
