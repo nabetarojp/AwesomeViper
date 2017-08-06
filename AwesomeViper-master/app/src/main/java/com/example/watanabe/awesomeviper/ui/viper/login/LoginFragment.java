@@ -1,4 +1,4 @@
-package com.example.watanabe.awesomeviper.ui.navigation.setting;
+package com.example.watanabe.awesomeviper.ui.viper.login;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,16 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.watanabe.awesomeviper.R;
+import com.example.watanabe.awesomeviper.databinding.FragmentLoginBinding;
 
 import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
 
-public class SettingFragment extends Fragment implements SettingContract.View{
+public class LoginFragment extends Fragment implements LoginContract.View {
 
     @Inject
-    SettingContract.Presenter presenter;
+    LoginContract.Presenter presenter;
+    FragmentLoginBinding binding;
 
     @Override
     public void onAttach(Context context) {
@@ -29,13 +31,13 @@ public class SettingFragment extends Fragment implements SettingContract.View{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        return inflater.inflate(R.layout.fragment_login, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // TODO: BINDING
+        binding = FragmentLoginBinding.bind(view);
     }
 
     @Override
