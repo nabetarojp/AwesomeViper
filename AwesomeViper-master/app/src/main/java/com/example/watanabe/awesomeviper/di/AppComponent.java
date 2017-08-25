@@ -1,6 +1,7 @@
 package com.example.watanabe.awesomeviper.di;
 
 import com.example.watanabe.awesomeviper.AwesomeApp;
+import com.example.watanabe.awesomeviper.data.source.task.TasksRepositoryModule;
 import com.example.watanabe.awesomeviper.ui.hoge.HogeActivityModule;
 import com.google.gson.Gson;
 
@@ -18,6 +19,7 @@ import dagger.android.AndroidInjectionModule;
         AndroidInjectionModule.class,
         AppModule.class,
         HogeActivityModule.class,
+        TasksRepositoryModule.class
 })
 public interface AppComponent {
 
