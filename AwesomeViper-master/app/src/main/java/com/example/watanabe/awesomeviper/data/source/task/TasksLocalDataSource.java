@@ -5,4 +5,5 @@ package com.example.watanabe.awesomeviper.data.source.task;
  */
 
 public class TasksLocalDataSource implements TasksDataSource {
+    
 }
